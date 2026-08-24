@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Чамд зориулав</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Montserrat:wght@300;400;500;600&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="petals"></div>
+
+<!-- SCREEN 1: intro -->
+<section class="screen active" id="screen-intro">
+  <div class="seal" id="seal">
+    <svg viewBox="0 0 100 100" class="seal-svg">
+      <circle cx="50" cy="50" r="46" />
+      <path d="M32 52 C38 62, 46 62, 50 52 C54 62, 62 62, 68 52" class="seal-heart"/>
+    </svg>
+  </div>
+  <p class="eyebrow">Хайрт гүнж минь</p>
+  <h1 class="headline">Таны бэлгийг<br>харья л даа ххэ?</h1>
+  <div class="btn-row" id="intro-btn-row">
+    <button class="btn btn-primary" id="btn-yes">Тиймээ, харъя</button>
+    <button class="btn btn-ghost" id="btn-no">Үгүй ээ хха</button>
+  </div>
+</section>
+
+<!-- SCREEN 2: yes reaction -->
+<section class="screen" id="screen-yes-react">
+  <div class="yes-bg"></div>
+  <div class="yes-bear">🐻</div>
+  <div class="yes-message-box">
+    <p class="yes-message">Тиймээ таныг сонгоно гэж мэдэж байсан ёоомммм ххэ 🫣🥹❤️</p>
+  </div>
+  <button class="btn btn-primary" id="btn-continue" style="margin-top:1.5rem;">
+    Хх жааа үргэлжлүүлье эээ 🤭
+  </button>
+</section>
+
+<!-- SCREEN 3: main menu -->
+<section class="screen" id="screen-cards">
+  <p class="eyebrow">Таньд зориулав гүнжтэн минь ххэ!</p>
+  <h2 class="headline small">Дараад нээгээрэй</h2>
+  <div class="card-grid">
+    <button class="card" data-target="screen-photo">
+      <span class="card-icon">🖼️</span><span class="card-label">Зураг</span>
+    </button>
+    <button class="card" data-target="screen-letter">
+      <span class="card-icon">💌</span><span class="card-label">Захидал</span>
+    </button>
+    <button class="card" data-target="screen-bouquet">
+      <span class="card-icon">💐</span><span class="card-label">Дэлбээ</span>
+    </button>
+    <button class="card" data-target="screen-date">
+      <span class="card-icon">📅</span><span class="card-label">Уулзалт</span>
+    </button>
+  </div>
+</section>
+
+<!-- SCREEN 4: photo -->
+<section class="screen" id="screen-photo">
+  <button class="back-btn" data-back>← Буцах</button>
+  <h2 class="headline small">Хамгийн дуртай зургаа</h2>
+  <div class="photo-frame">
+    <img src="photo1.jpg" alt="Бидний зураг" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+    <div class="photo-fallback">Энд тавьнуу баярлалаа 🙂<br><span class="hint">(photo1.jpg)</span></div>
+  </div>
+  <p class="caption">Энэ мөчийг би хэзээ ч мартахгүй ✨</p>
+</section>
+
+<!-- SCREEN 5: letter -->
+<section class="screen" id="screen-letter">
+  <button class="back-btn" data-back>← Буцах</button>
+  <div class="envelope">
+    <p class="letter-text">
+      Сайн байна уу, хайрт минь 💛<br><br>
+      Танилцсан цагаасаа л би таньд татагдаж,
+      Инээмсэглэлд тань уусаад жаргалыг мэдэрдэг.
+      Бэлэглэсэн бүх гэрэл гэгээнд тань баярлан,
+      Ирээдүйн урт замыг хамтдаа туулмаар байна..<br><br>
+      Надад авчирсан аз жаргалд тань баярлалаа. 🌷
+    </p>
+    <p class="signature">— Хайрт ханхүүгээс нь</p>
+  </div>
+</section>
+
+<!-- SCREEN 6: bouquet -->
+<section class="screen" id="screen-bouquet">
+  <button class="back-btn" data-back>← Буцах</button>
+  <h2 class="headline small">Таньд зориулсан дэлбээ</h2>
+  <div class="bouquet-wrap">
+    <div class="note note-1">Таньтай өнгөрүүлсэн хором бүр минь нандин.</div>
+    <div class="note note-2">Таны минь инээмсэглэл дэлхийн хамгийн үзэсгэлэнтэй нь.</div>
+    <div class="bouquet-emoji">💐</div>
+    <div class="note note-3">Таньтайтайгаа учирсан би ямар их азтай хүн бэ.</div>
+    <div class="note note-4">Мөч бүрт хамтдаа байдагт тань баярлалаа.</div>
+  </div>
+</section>
+
+<!-- SCREEN 7: date intro -->
+<section class="screen" id="screen-date">
+  <button class="back-btn" data-back>← Буцах</button>
+  <p class="eyebrow">Таньд зориулав гүнжтэн минь ххэ!</p>
+  <h2 class="headline small">Хамт цаг өнгөрөөх үү?</h2>
+  <p class="caption" style="margin-bottom:2rem;">Цаг, газараа та сонгоно уу! 💛</p>
+  <div class="btn-row">
+    <button class="btn btn-primary" id="btn-date-yes">Тиймээ, эхэлье!</button>
+  </div>
+</section>
+
+<!-- SCREEN 8: date & time picker -->
+<section class="screen" id="screen-datetime-choice">
+  <button class="back-btn" data-back>← Буцах</button>
+  <div class="date-card">
+    <p class="step-label">АЛХАМ 1 / 2</p>
+    <div class="step-icon">📅</div>
+    <h2 class="date-card-title">Хэзээ тохиромжтой вэ?</h2>
+    <p class="date-card-sub">Өдөр, цагаа сонгоод доош үргэлжлүүлнэ үү. Баярлалаа! 💛</p>
+    <label class="field-label">ӨДӨР</label>
+    <input type="date" id="date-input" class="field-input">
+    <label class="field-label">ЦАГ</label>
+    <input type="time" id="time-input" class="field-input">
+    <button class="next-btn" id="btn-to-place">Дараах: Газар →</button>
+  </div>
+</section>
+
+<!-- SCREEN 9: place picker -->
+<section class="screen" id="screen-place-choice">
+  <button class="back-btn" data-back-datetime>← Буцах</button>
+  <div class="date-card">
+    <p class="step-label">АЛХАМ 2 / 2</p>
+    <div class="step-icon">📍</div>
+    <h2 class="date-card-title">Хаана уулзах вэ?</h2>
+    <p class="date-card-sub">Нэгийг сонгох эсвэл өөрөө бичнэ үү.</p>
+    <div class="place-options">
+      <button class="place-option place-choice" data-place="cafe">
+        <img src="coffe.jpg" onerror="this.style.display='none'">
+        <span>☕ Кофе шоп</span>
+      </button>
+      <button class="place-option place-choice" data-place="park">
+        <img src="park.jpg" onerror="this.style.display='none'">
+        <span>🌳 Цэцэрлэгт хүрээлэн</span>
+      </button>
+      <button class="place-option place-choice" data-place="movie">
+        <img src="movie night.jpg" onerror="this.style.display='none'">
+        <span>🎬 Кино театр</span>
+      </button>
+    </div>
+    <label class="field-label" style="margin-top:1rem;">ӨӨРӨӨ БИЧЬЕ ХХЭ</label>
+    <div class="own-row">
+      <input type="text" id="place-own-input" class="field-input" placeholder="Жишээ: Нуурын эрэг дээр...">
+      <button class="next-btn" id="place-own-confirm" style="margin-top:0; padding:0.7rem 1.2rem; font-size:0.9rem; width:auto;">Батлах</button>
+    </div>
+  </div>
+</section>
+
+
+<section class="screen" id="screen-final-reveal">
+  <h2 class="headline small">Манайхаар үйлчлүүлсэн таньд баярлалаа! Дараа дахин үйлчлүүлээрэй хха! 💛</h2>
+  <div class="envelope">
+    <p class="letter-text" style="font-family: var(--font-body); font-size:1rem; text-align:left;">
+      🕐 Цаг: <span id="final-datetime">-</span><br>
+      📍 Газар: <span id="final-place">-</span>
+    </p>
+  </div>
+  <p class="caption" style="margin-top:1.5rem;">Уулзах хүртэл тэвчихгүйнээээ ий ий ххэ 🥰</p>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
